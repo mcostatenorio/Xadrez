@@ -42,6 +42,19 @@
             p.posicao = pos;
         }
 
+        // Retirando peca em um determinado local
+        public Peca retirarPerca(Posicao pos)
+        {
+            if (peca(pos) == null)
+            {
+                return null;
+            }
+            Peca aux = peca(pos);
+            aux.posicao = null;
+            pecas[pos.linha, pos.coluna] = null;
+            return aux;
+        }
+
         //Testar se uma posicao é valida
         public bool posicaoValida(Posicao pos)
         {
