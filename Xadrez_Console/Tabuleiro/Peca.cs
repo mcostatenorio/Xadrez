@@ -20,6 +20,11 @@
             qteMovimentos++;
         }
 
+        public void decrementarQteMovimentos()
+        {
+            qteMovimentos--;
+        }
+
         // Testa se a pessa não esta bloqueada
         public bool existeMovimentosPossiveis()
         {
