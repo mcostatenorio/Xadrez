@@ -20,6 +20,28 @@
             qteMovimentos++;
         }
 
+        // Testa se a pessa não esta bloqueada
+        public bool existeMovimentosPossiveis()
+        {
+            bool[,] mat = movimentosPossiveis();
+            for (int i=0; i<tab.linhas; i++)
+            {
+                for (int j=0; j<tab.colunas; j++)
+                {
+                    if(mat[i, j])
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        // Testa se o destino é válido
+        public bool podeMoverPara(Posicao pos)
+        {
+            return movimentosPossiveis()[pos.linha, pos.coluna];
+        }
         // Metodo que define para onde cada peca pode se mover
         public abstract bool[,] movimentosPossiveis();
     }
